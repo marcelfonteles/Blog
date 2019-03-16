@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: []
+  before_action :set_comment, only: [:destroy]
   
   def new
     @comment = Comment.new(post_id: params[:id])
@@ -17,9 +17,28 @@ class CommentsController < ApplicationController
   end
   
   def edit
+    @comment = Comment.find(params[:comment_id])
+  end
+  
+  def update
+    @comment = Comment.find(params[:comment_id])
+    if @comment.update(comments_params)
+      flash[:notice] = 'Comentário atualizado com sucesso'
+      redirect_to posts_path
+    else
+      flash[:noitce] = 'Não foi possível atualizar o comentário'
+      redirect_to posts_path
+    end
   end
 
   def destroy
+    if @comment.destroy
+      flash[:notice] = 'Comentário apagado com sucesso'
+      redirect_to posts_path
+    else
+      flash[:notice] = 'Não foi possível apagar o comentário'
+      redirect_to posts_path
+    end
   end
 private
   def comments_params

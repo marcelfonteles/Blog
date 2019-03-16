@@ -21,7 +21,7 @@
     <p style="font-size:12px"><%= link_to 'Comentar', new_comment_path(post.id) %></p>
       <% @count = 1 %>
       <% post.comments.each do |comment| %>
-        <p><%= @count %>. <%= comment.content %></p>
+        <p><%= @count %>. <%= comment.content %> <span style="font-size:12px"><%= link_to 'Apagar', comment_path(comment.id), method: :delete, data: {confirm: 'Tem certeza que deseja apagar o comentário?'}%></span> | <span style="font-size:12px"><%= link_to 'Editar', edit_comment_path(post.id, comment.id)%></span></p>
         <% @count += 1%>
       <% end %>
     <p>Edição</p>
