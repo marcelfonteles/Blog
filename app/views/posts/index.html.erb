@@ -1,5 +1,9 @@
 <h1>Página Inicial da Postagens</h1>
 <p>Aqui é onde tu vai ler as besteiras, seu bosta</p>
+<% if flash[:notice] %>
+  <p>------------------------------------------------------</p>
+  <p><%= flash[:notice] %></p>
+<% end %>
 <p>------------------------------------------------------</p>
 <% @posts.each do |post|%>
   <div>

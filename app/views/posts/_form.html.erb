@@ -1,3 +1,15 @@
+<% if flash[:notice] %>
+    <p>---------------------------------------------------------------</p>
+    <p><%= flash[:notice] %></p>
+    <% if @post.errors.any? %>
+        <ul>
+            <%@post.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+        </ul>
+        <p>---------------------------------------------------------------</p>
+    <% end %>
+<% end %>
 <%= form_for @post do |f| %>
     <p>
         <%= f.label :title, 'Título' %><br>

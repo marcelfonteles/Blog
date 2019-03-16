@@ -11,8 +11,11 @@ class PostsController < ApplicationController
     @post = Post.new(posts_params)
     if @post.save
       redirect_to posts_path
+      flash[:notice] = 'Post criado com sucesso'
     else
+      flash[:notice] = 'Não foi possível salvar a postagem'
       render 'new'
+      
     end
   end
 
