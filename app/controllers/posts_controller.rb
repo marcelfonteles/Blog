@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update]
+  before_action :set_post, only: [:edit, :update, :destroy]
   
   def index
     @posts = Post.all
@@ -35,7 +35,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    if @post.destroy
+      flash[:notice] = 'Postagem apagado com sucesso'
+      redirect_to posts_path
+    else
+      flash[:notice] = 'Não foi possível apagar a postagem'
+      redirect_to posts_path
+    end
   end
+  
   private
     def posts_params
       params.require(:post).permit(:title, :content)

@@ -18,13 +18,14 @@
     <p><%= post.content %></p>
     
     <h3>Comentário(s)</h3>
+    <p style="font-size:12px"><%= link_to 'Comentar'%></p>
       <% post.comments.each do |comment| %>
         <% @count = 1 %>
         <p><%= @count %>. <%= comment.content %></p>
         <% @count += 1%>
       <% end %>
     <p>Edição</p>
-    <p><%= link_to 'Editar', edit_post_path(post.id)%> | <%= link_to 'Apagar'%></p>
+    <p><%= link_to 'Editar', edit_post_path(post.id)%> | <%= link_to 'Apagar', post_path(post.id), method: :delete, data: {confirm: 'Tem certeza que deseja apagar a postagem?'}%></p>
   <p>------------------------------------------------------</p>
   </div>
 <% end %>
