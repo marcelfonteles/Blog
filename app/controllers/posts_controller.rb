@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:edit, :update]
+  
   def index
     @posts = Post.all
   end
@@ -15,11 +17,18 @@ class PostsController < ApplicationController
     else
       flash[:notice] = 'Não foi possível salvar a postagem'
       render 'new'
-      
     end
   end
 
   def update
+    #render plain: params[:post].inspect
+    if @post.update(posts_params)
+      flash[:notice] = 'Postagem atualizada com sucesso'
+      redirect_to posts_path
+    else
+      flash[:notice] = 'Não foi possível atualizar a postagem'
+      render 'edit'
+    end
   end
 
   def edit
@@ -35,6 +44,4 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
-
-
 end

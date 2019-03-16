@@ -1,25 +1,33 @@
-<h1>Página Inicial da Postagens</h1>
-<p>Aqui é onde tu vai ler as besteiras, seu bosta</p>
+<h1 style="text-align:center">Página Inicial da Postagens</h1>
+<p style="text-align:center">Aqui é onde tu vai ler as besteiras, seu bosta</p>
 <% if flash[:notice] %>
-  <p>------------------------------------------------------</p>
-  <p><%= flash[:notice] %></p>
+  <p style="text-align:center">------------------------------------------------------</p>
+  <p style="text-align:center"><b><%= flash[:notice] %></b></p>
 <% end %>
-<p>------------------------------------------------------</p>
+
+<p style="text-align:center">------------------------------------------------------</p>
+
+<p style="text-align:center">Navegação</p>
+<p style="text-align:center"><%= link_to 'Página Inicial', root_path %> | <%= link_to 'Novo Post', new_post_path %></p>
+
+<p style="text-align:center">------------------------------------------------------</p>
+
 <% @posts.each do |post|%>
-  <div>
-      <h1><%= post.title %></h1>
-      <p><%= post.content %></p>
-      <h3>Comentário(s)</h3>
-      
+  <div style="text-align:center">
+    <h1><%= post.title %></h1>
+    <p><%= post.content %></p>
+    
+    <h3>Comentário(s)</h3>
       <% post.comments.each do |comment| %>
         <% @count = 1 %>
         <p><%= @count %>. <%= comment.content %></p>
         <% @count += 1%>
       <% end %>
+    <p>Edição</p>
+    <p><%= link_to 'Editar', edit_post_path(post.id)%> | <%= link_to 'Apagar'%></p>
   <p>------------------------------------------------------</p>
   </div>
 <% end %>
-<p>Navegação</p>
-<%= link_to 'Página Inicial', root_path %> | <%= link_to 'Novo Post', new_post_path %>
+
 
 
