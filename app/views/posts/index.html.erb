@@ -18,7 +18,7 @@
     <p><%= post.content %></p>
     
     <h3>Comentário(s)</h3>
-    <p style="font-size:12px"><%= link_to 'Comentar'%></p>
+    <p style="font-size:12px"><%= link_to 'Comentar', new_comment_path(post.id) %></p>
       <% post.comments.each do |comment| %>
         <% @count = 1 %>
         <p><%= @count %>. <%= comment.content %></p>
