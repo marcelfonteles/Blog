@@ -1,4 +1,21 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<h1>Página Inicial da Postagens</h1>
+<p>Aqui é onde tu vai ler as besteiras, seu bosta</p>
+<p>------------------------------------------------------</p>
+<% @posts.each do |post|%>
+  <div>
+      <h1><%= post.title %></h1>
+      <p><%= post.content %></p>
+      <h3>Comentário(s)</h3>
+      
+      <% post.comments.each do |comment| %>
+        <% @count = 1 %>
+        <p><%= @count %>. <%= comment.content %></p>
+        <% @count += 1%>
+      <% end %>
+  <p>------------------------------------------------------</p>
+  </div>
+<% end %>
+<p>Navegação</p>
+<%= link_to 'Página Inicial', root_path %> | <%= link_to 'Novo Post', new_post_path %>
 
 
