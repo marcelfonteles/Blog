@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  #devise_for :users
+  #devise_for :admins
   root 'pages#index'
   get 'pages/index'
   get 'pages/about'
@@ -12,6 +14,16 @@ Rails.application.routes.draw do
   
   get '/comment/:post_id/:comment_id/edit', to: 'comments#edit', as: 'edit_comment'
   patch 'comment/:post_id/:comment_id/update', to: 'comments#update', as: 'update_comment'
+  
+  # Devise Controllers for Admins
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions'
+  }
+  
+  # Devise Controllers for Users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -46,6 +46,9 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
 # Ckeditor integration gem for rails
 gem 'ckeditor'
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
+
 
 
 

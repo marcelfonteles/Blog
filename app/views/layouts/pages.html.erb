@@ -37,6 +37,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/pages/contact">Contato</a>
           </li>
+          <% if admin_signed_in? %>
+            <li class="nav-item">
+              <a data-confirm="Temcerteza que deseja sair?" data-method="delete" href="/admins/sign_out" rel="nofollow" class="nav-link">Log Out</a>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
