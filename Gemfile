@@ -38,15 +38,15 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # Awesome Print
 gem 'awesome_print'
-
 # Bootstrap
 gem 'bootstrap', '~> 4.3.1'
-
 # JQuery
 gem 'jquery-rails'
-
 # Popper
 gem 'popper_js', '~> 1.14.5'
+# Ckeditor integration gem for rails
+gem 'ckeditor'
+
 
 
 group :development, :test do
