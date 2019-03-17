@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:destroy]
   
   def new
+    @post = Post.find(params[:id])
     @comment = Comment.new(post_id: params[:id])
   end
 

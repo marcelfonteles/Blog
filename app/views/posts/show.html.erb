@@ -20,7 +20,35 @@
       </div>
     </div>
   </article>
-  
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <%= link_to new_comment_path(@post.id) do %>
+          <button type="button" class="btn btn-secondary">Comentar Postagem</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <% if @post.comments.any?%>
+    <div class="container">
+      <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p class="text-center font-weight-bold">COMENTÁRIOS</p>
+          </div>
+        </div>
+      <% @cont = 1 %>
+      <% @post.comments.each do |comment| %>
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <p><b><%= @cont %>.</b> <%= comment.content %></p>
+            <% @cont += 1%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
     <footer>
     <div class="container">
       <div class="row">
