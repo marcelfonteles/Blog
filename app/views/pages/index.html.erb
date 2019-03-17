@@ -14,14 +14,6 @@
    <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Man must explore, and this is exploration at its greatest
-            </h2>
-          </a>
-        </div>
-        <hr>
         <% @posts.each do |post| %>
           <div class="post-preview">
             <%= link_to post_path(post.id) do %>

@@ -30,45 +30,39 @@
         <% end %>
         
         <hr>
-
-
-
-
-
-
-
-
-<h1 style="text-align:center">Página Inicial da Postagens</h1>
-<p style="text-align:center">Aqui é onde tu vai ler as besteiras, seu bosta</p>
-<% if flash[:notice] %>
-  <p style="text-align:center">------------------------------------------------------</p>
-  <p style="text-align:center"><b><%= flash[:notice] %></b></p>
-<% end %>
-
-<p style="text-align:center">------------------------------------------------------</p>
-
-<p style="text-align:center">Navegação</p>
-<p style="text-align:center"><%= link_to 'Página Inicial', root_path %> | <%= link_to 'Novo Post', new_post_path %></p>
-
-<p style="text-align:center">------------------------------------------------------</p>
-
-<% @posts.each do |post|%>
-  <div style="text-align:center">
-    <h1><%= post.title %></h1>
-    <p><%= post.content %></p>
-    
-    <h3>Comentário(s)</h3>
-    <p style="font-size:12px"><%= link_to 'Comentar', new_comment_path(post.id) %></p>
-      <% @count = 1 %>
-      <% post.comments.each do |comment| %>
-        <p><%= @count %>. <%= comment.content %> <span style="font-size:12px"><%= link_to 'Apagar', comment_path(comment.id), method: :delete, data: {confirm: 'Tem certeza que deseja apagar o comentário?'}%></span> | <span style="font-size:12px"><%= link_to 'Editar', edit_comment_path(post.id, comment.id)%></span></p>
-        <% @count += 1%>
-      <% end %>
-    <p>Edição</p>
-    <p><%= link_to 'Editar', edit_post_path(post.id)%> | <%= link_to 'Apagar', post_path(post.id), method: :delete, data: {confirm: 'Tem certeza que deseja apagar a postagem?'}%></p>
-  <p>------------------------------------------------------</p>
-  </div>
-<% end %>
-
-
-
+        
+        <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>

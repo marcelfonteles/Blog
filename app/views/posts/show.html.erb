@@ -49,6 +49,26 @@
       <% end %>
     </div>
   <% end %>
+  <hr>
+   <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        <p class="text-center font-weight-bold"> Novo Comentário</p>
+        <p>
+          <%= form_for @comment, url: create_comment_path(@comment.post_id) do |f| %>
+            <div style="display:none"><%= f.text_field :post_id %></div>
+            <p>
+              <%= f.text_area :content, size:'100x5'%>
+            </p>
+            <p><%= f.submit 'Comentar', class:'btn btn-primary' %></p>
+          <% end %>
+        </p>
+        </div>
+      </div>
+    </div>
+<hr>
+  
+  
     <footer>
     <div class="container">
       <div class="row">

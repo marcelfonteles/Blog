@@ -10,10 +10,10 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comments_params)
     if @comment.save
       flash[:notice] = 'Comentário criado com sucesso'
-      redirect_to posts_path
+      redirect_to post_path(params[:post_id])
     else
       flash[:noitce] = 'Não foi possível salvar seu comentário'
-      redirect_to posts_path
+      redirect_to post_path(params[:post_id])
     end
   end
   
