@@ -42,7 +42,7 @@
       <% @post.comments.each do |comment| %>
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p><b><%= @cont %>.</b> <%= comment.content.html_safe %></p>
+            <p><%= (comment.content[0,3] + '<b>' + @cont.to_s + '.</b> ' + comment.content[3, comment.content.length]).html_safe %></p>
             <% @cont += 1%>
           </div>
         </div>
