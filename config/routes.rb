@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   
   # Routes for PagesController
-  scope '/pages', controller: :page do
+  scope '/pages', controller: :pages do
     get 'index' => :index, as: 'index'
     get 'about' => :about
     get 'contact' => :contact

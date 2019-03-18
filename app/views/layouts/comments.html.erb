@@ -38,6 +38,16 @@
           <li class="nav-item">
             <a class="nav-link" href="/pages/contact">Contato</a>
           </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a data-confirm="Tem certeza que deseja sair?" href="/users/sign_out" data-method="delete" class="nav-link">Log Out</a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a href="/users/sign_in">Log In</a>
+              
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
