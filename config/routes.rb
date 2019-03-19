@@ -38,14 +38,10 @@ Rails.application.routes.draw do
     
   end
   
-  #Carregar comentários
+  # Carregar comentários
   get '/post/comments/load', to: 'comments#load_comments', as: 'load_comments'
-  
-  # Redirections
-  # get '/stories', to: redirect('/articles')
-  
-  #match ... via [post, get]
-  
+  # Carregar formulário de novo comentário
+  get '/post/comment/new', to: 'comments#new', as: 'new_comment'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -17,6 +17,7 @@
 //= require ckeditor/init
 //= require iziToast/iziToast.min.js
 //= require javascript.js
+//= require scripts.js.erb
 //= require activestorage
 //= require turbolinks
 

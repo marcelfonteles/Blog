@@ -1,0 +1,5 @@
+if ($("#comments p.text-center").length == 1) {
+    $("#comments").append("<p><b>Seu comentário</b></p><p>" + $("#comentario-conteudo").val() + "</p>" );
+}
+$("#setor-comentario").empty();
+$("#botao-comentar").removeClass("d-none");
