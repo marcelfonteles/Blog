@@ -1,0 +1,6 @@
+<% @count = 1%>
+<% @comments.each do |comment| %>
+    <p><%=('<b>' + @count.to_s + '. </b>' + comment.content).html_safe %></p>
+    <% @count += 1%>
+<% end%>
+<hr>

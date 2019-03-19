@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  layout 'layout'
+  layout 'comments'
   before_action :set_comment, only: [:destroy]
 
   
@@ -27,6 +27,12 @@ class CommentsController < ApplicationController
       flash[:notice] = 'Não foi possível apagar o comentário'
       redirect_to posts_path
     end
+  end
+  
+  def load_comments
+    puts 'parametros: ' + params[:post_id]
+    @comments = Comment.where(post_id: params[:post_id])
+    
   end
   
 private

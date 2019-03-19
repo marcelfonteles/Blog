@@ -38,6 +38,8 @@ Rails.application.routes.draw do
     
   end
   
+  #Carregar comentários
+  get '/post/comments/load', to: 'comments#load_comments', as: 'load_comments'
   
   # Redirections
   # get '/stories', to: redirect('/articles')

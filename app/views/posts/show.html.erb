@@ -21,26 +21,21 @@
     </div>
   </article>
   <hr>
-  <% if @post.comments.any?%>
-    <div class="container">
-      <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <p class="text-center font-weight-bold">Comentários</p>
-          </div>
-        </div>
-      <% @cont = 1 %>
-      <% @post.comments.each do |comment| %>
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <p><%= (comment.content[0,3] + '<b>' + @cont.to_s + '.</b> ' + comment.content[3, comment.content.length]).html_safe %></p>
-            <% @cont += 1%>
-          </div>
-        </div>
-      <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <button id="botao" class="btn btn-primary">Carregar Comentários</button>
+      </div>
     </div>
-    <hr>
-  <% end %>
-  
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div id="comments" class="col-lg-8 col-md-10 mx-auto">
+       
+      </div>
+    </div>
+  </div>
    <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -49,13 +44,13 @@
           <%= form_for @comment, url: create_comment_path(@comment.post_id) do |f| %>
             <div style="display:none"><%= f.text_field :post_id %></div>
             <p>
-              <%= f.cktext_area :content %>
+              <%= f.text_area :content, id:'comentario-conteudo', size:'80x5', class:'form-control'  %>
             </p>
-            <p><%= f.submit 'Comentar', class:'btn btn-primary' %></p>
+            <p><%= f.submit 'Comentar', class:'btn btn-primary', id:'commentar-botao' %></p>
+            
           <% end %>
         </p>
         </div>
       </div>
-    </div>
-
+<div id="post-id" class="d-none"><%= @post.id %></div>
 <!--Scripts-->

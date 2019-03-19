@@ -16,6 +16,8 @@
 //= require bootstrap-sprockets
 //= require ckeditor/init
 //= require iziToast/iziToast.min.js
+//= require javascript.js
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+
+
