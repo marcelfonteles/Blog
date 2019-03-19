@@ -9,7 +9,7 @@ $(function(){
                 data: { post_id: $("#post-id").html() },
                 success: function(html) {
                     $("#comments").append(html);
-                    $("#botao").addClass("d-none");
+                    $("#disapear").addClass("d-none");
                 }
             }); 
             clicked = true;

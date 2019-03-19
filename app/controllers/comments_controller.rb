@@ -30,9 +30,7 @@ class CommentsController < ApplicationController
   end
   
   def load_comments
-    puts 'parametros: ' + params[:post_id]
     @comments = Comment.where(post_id: params[:post_id])
-    
   end
   
 private
