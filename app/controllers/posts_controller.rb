@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
-  layout 'layout'
+  layout :resolve_layout
+
+  
   before_action :set_post, only: [:edit, :update, :destroy, :show]
   before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
   def index
@@ -11,6 +13,7 @@ class PostsController < ApplicationController
   end
   
   def new
+
     @post = Post.new
   end
 
@@ -56,5 +59,14 @@ class PostsController < ApplicationController
     
     def set_post
       @post = Post.find(params[:id])
+    end
+    
+    def resolve_layout
+      case action_name
+        when 'new', 'edit'
+          'dashboard'
+        else
+          'layout'
+      end
     end
 end

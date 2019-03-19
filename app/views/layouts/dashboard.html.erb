@@ -37,8 +37,9 @@
                     </li>
                     <h3 class="menu-title">Menu</h3><!-- /.menu-title -->
                     <li>
-                        <a href="/dashboard/index"> <i class="menu-icon far fa-clipboard"></i>Nova Postagem </a>
+                        <a href="/posts/new"> <i class="menu-icon far fa-clipboard"></i>Nova Postagem </a>
                     </li>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -52,9 +53,8 @@
                     <p></p>
                 </div>
                 <div class="col-sm-5">
-                   
                     <div class="float-right nav-item">
-                        <%= link_to 'Log Out', dashboard_index_path, class:'nav-link btn btn-outline-dark rounded'%>
+                        <%= link_to 'Log Out', destroy_admin_session_path, class:'nav-link btn btn-outline-dark rounded', method: :delete, data: {confirm: 'Tem certeza que deseja sair?'}%>
                     </div>
                 </div>
         </header>

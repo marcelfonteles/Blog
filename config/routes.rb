@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   # Route for DashboardController
   scope '/dashboard', controller: :dashboard do
     get 'index' => :index, as: 'dashboard_index'
+    get 'new-post' => :new_post, as: 'dashboard_new_post'
   end
   
   
