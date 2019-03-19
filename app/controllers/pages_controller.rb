@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  layout 'layout'
   def index
     @posts = Post.all
   end
