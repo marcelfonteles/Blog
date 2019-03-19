@@ -57,3 +57,14 @@
         </div>
       </div>
     </div>
+    <%= @post.id %>
+<!--Scripts-->
+<% if flash[:notice]%>
+ <script>
+ iziToast.warning({
+    title: 'Aviso',
+    message: '<%= flash[:notice] %>',
+    position: 'topRight'
+});
+</script>
+<% end %>
