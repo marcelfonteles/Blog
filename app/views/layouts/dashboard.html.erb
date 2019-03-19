@@ -39,6 +39,9 @@
                     <li>
                         <a href="/posts/new"> <i class="menu-icon far fa-clipboard"></i>Nova Postagem </a>
                     </li>
+                    <li>
+                        <a href="/dashboard/posts"> <i class="menu-icon far fa-clipboard"></i>Todas Postagens </a>
+                    </li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -49,13 +52,27 @@
         <!-- Header-->
         <header id="header" class="header">
             <div class="header-menu">
-                <div class="col-sm-7">
+                <div class="col-md-6">
                     <p></p>
                 </div>
-                <div class="col-sm-5">
-                    <div class="float-right nav-item">
-                        <%= link_to 'Log Out', destroy_admin_session_path, class:'nav-link btn btn-outline-dark rounded', method: :delete, data: {confirm: 'Tem certeza que deseja sair?'}%>
+                <div class="col-md-2">
+                     <div class="nav-item float-right">
+                         
+                        <% if @post.is_a?(Post) and !@post.id.nil? %>
+                            <%= link_to 'Ver postagem', post_path(@post.id), class:'nav-link btn btn-outline-primary rounded', target: :_blank %>
+                        <% end %>
+                        <p></p>
                     </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="nav-item float-right">
+                        <%= link_to 'Ver Blog', root_path, class:'nav-link btn btn-outline-primary rounded' %>
+                    </div>
+                </div>
+                <div clas="col-md-2">
+                        <div class="float-left nav-item">
+                            <%= link_to 'Log Out', destroy_admin_session_path, class:'nav-link btn btn-outline-dark rounded', method: :delete, data: {confirm: 'Tem certeza que deseja sair?'}%>
+                        </div>
                 </div>
         </header>
        

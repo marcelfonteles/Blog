@@ -1,0 +1,42 @@
+<div class="row col-sm-12">
+    <p></p>
+</div>
+
+<div class="col-sm-1">
+    <p></p>
+</div>
+
+<div class="col-md-9">
+    <div class="card">
+        <div class="card-header">
+            <strong class="card-title">Todas as postagens</strong>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Cometários</th>
+                        <th scope="col">Data da postagem</th>
+                        <th>Edição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @count = 1%>
+                    <% @posts.each do |post|%>
+                    <tr>
+                        <th scope="row"><%= @count%></th>
+                        <td><%= post.title[0,30] %> <% if post.title.length > 30 %> <%= + '...'%><% end %></td>
+                        <td><%= post.comments.count %></td>
+                        <td><%= post.created_at.strftime('%d/%m/%y')%></td>
+                        <td><%= link_to 'Ver', post_path(post.id), class:'btn btn-outline-secondary btn-sm rounded'%> <%= link_to 'Editar', dashboard_post_edit_path(post.id), class:'btn btn-outline-secondary btn-sm rounded' %> <%= link_to 'Excluir', post_path(post.id), class:'btn btn-outline-danger btn-sm rounded', method: :delete, data: {confirm:'Tem certeza que deseja apagar essa postagem?'}%></td>
+                        
+                        <% @count += 1%>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

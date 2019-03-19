@@ -1,0 +1,27 @@
+<div class="col-md-2">
+    <p></p>
+</div>
+
+<div class="col-md-8">
+
+    <%= form_with model: @post, url: post_path(@post.id)  do |f| %>
+     <p>
+            <%= f.label :title, 'Título' %><br>
+            <%= f.text_field :title, class:'form-control' %>
+        </p>
+        
+        <p>
+            <%= f.label :content, 'Conteúdo'%><br>
+            <%= f.cktext_area :content, class:'form-control'%>
+        </p>
+        <p>
+            <%= f.submit 'Publicar', class:'btn btn-primary rounded btn-block'%>
+        </p>
+    <% end %>
+</div>
+
+<div class="col-md-2">
+    <p></p>
+</div>
+
+
