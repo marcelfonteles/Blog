@@ -7,6 +7,7 @@ Models:
     - Usuários (User)
     - Postagem (Post)
     - Comentários (Comment)
+
 Controllers:
     - Administradores (admins)
     - Usuários (users)
