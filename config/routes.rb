@@ -30,6 +30,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   
+  # Route for DashboardController
+  scope '/dashboard', controller: :dashboard do
+    get 'index' => :index, as: 'dashboard_index'
+  end
+  
+  
   # Redirections
   # get '/stories', to: redirect('/articles')
   
