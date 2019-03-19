@@ -75,7 +75,7 @@
                         <th scope="row"><%= @count%></th>
                         <td><%= post.title[0,40] %> <% if post.title.length > 40 %> <%= + '...'%><% end %></td>
                         <td><%= post.comments.count %></td>
-                        <td><%= post.created_at%></td>
+                        <td><%= post.created_at.strftime('%d/%m/%y')%></td>
                         <% @count += 1%>
                     </tr>
                     <% end %>

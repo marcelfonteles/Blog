@@ -29,12 +29,3 @@
     </div>
   </div>
 <!--Scripts-->
-<% if flash[:notice] %>
-  <script>
-    iziToast.success({
-    title: 'OK',
-    message: '<%= flash[:notice]%>',
-    position: 'topRight'
-});
-  </script>
-<%end%>
