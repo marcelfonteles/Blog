@@ -21,21 +21,11 @@
     </div>
   </article>
   <hr>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <%= link_to new_comment_path(@post.id) do %>
-          <button type="button" class="btn btn-secondary">Comentar Postagem</button>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <hr>
   <% if @post.comments.any?%>
     <div class="container">
       <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p class="text-center font-weight-bold">COMENTÁRIOS</p>
+            <p class="text-center font-weight-bold">Comentários</p>
           </div>
         </div>
       <% @cont = 1 %>
@@ -48,8 +38,9 @@
         </div>
       <% end %>
     </div>
+    <hr>
   <% end %>
-  <hr>
+  
    <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -66,41 +57,3 @@
         </div>
       </div>
     </div>
-<hr>
-  
-  
-    <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <ul class="list-inline text-center">
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
-        </div>
-      </div>
-    </div>
-  </footer>

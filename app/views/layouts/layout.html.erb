@@ -55,8 +55,10 @@
   <% if admin_signed_in?%>
     <hr>
     <div class="text-center">
-    <a href="admins/sign_out" data-method="delete" data-confirm="Tem certeza que deseja sair?" class="btn btn-secondary">Log Out de Administrador</a>
+    <a href="/admins/sign_out" data-method="delete" data-confirm="Tem certeza que deseja sair?" class="btn btn-secondary">Log Out de Administrador</a>
     </div>
+    <hr>
+  <% else %>
     <hr>
   <% end %>
   <!-- Footer -->
