@@ -48,6 +48,8 @@ gem 'popper_js', '~> 1.14.5'
 gem 'ckeditor'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
+# Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
+gem 'rails-i18n', '~> 5.1'
 
 
 
