@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Blog desenvolvido em Ruby on Rails utilizando o postgresql.
 
-Things you may want to cover:
+Models:
+    - Administradores (Admin)
+    - Usuários (User)
+    - Postagem (Post)
+    - Comentários (Comment)
+Controllers:
+    - Administradores (admins)
+    - Usuários (users)
+    - Postagem (posts)
+    - Comentários (comments)
+    - Painel Admnistrativo (dashboards)
 
-* Ruby version
+O blog possui dois tipos de logins (usuários e administradores), onde só quem pode publicar uma postagem é o admnistrador e só quem pode
+criar um comentário é o usuário. Comentários são salvos utilizando AJAX para evitar a necessidade de recarregamento da página.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
