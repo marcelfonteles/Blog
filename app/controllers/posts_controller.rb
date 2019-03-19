@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy, :show]
   before_action :authenticate_admin!, only: [:new, :create, :update, :edit, :destroy]
   def index
-    @posts = Post.all
+    @posts = Post.all.order('created_at DESC')
   end
   
   def show
@@ -61,6 +61,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
     
+    # Definir qual layout será utilizado dependendo da action
     def resolve_layout
       case action_name
         when 'new', 'edit'
