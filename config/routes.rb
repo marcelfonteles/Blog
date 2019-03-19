@@ -13,16 +13,11 @@ Rails.application.routes.draw do
   resources :posts
   
   # Routes for CommentsController
-  resources :comments, except: [:edit, :create, :new, :update]
-  
+
   scope '/comment', controller: :comments do
     # Routes for new and create actions
-    get ':id/new' => :new, as: 'new_comment'
     post ':post_id/create' => :create, as: 'create_comment'
-    
-    # Routes for edit and update actions
-    get ':post_id/:comment_id/edit' => :edit, as: 'edit_comment'
-    patch ':post_id/:comment_id/update' => :update, as: 'update_comment'
+    delete ':id' => :destroy, as: 'comment'
   end
   
   # Devise Controllers for Admins
