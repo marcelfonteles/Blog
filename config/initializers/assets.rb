@@ -15,4 +15,5 @@ Rails.application.config.assets.precompile += %w( admin.js
                                                   admin.css 
                                                   clean-blog.min.css 
                                                   ckeditor/*
-                                                  devise.scss)
+                                                  devise.scss
+                                                  iziToast/*)
